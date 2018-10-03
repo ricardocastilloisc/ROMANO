@@ -16,6 +16,9 @@ public class Romano {
 	//metodo donde se realizaran todas las operaciones
 	static public  String romano(String texto) 
 	{
+		//cadena que estaremos manipulando
+		//convertimos a mayusculas
+		String cadenaAmanipular = texto.toUpperCase();
 		//conteos donde estos valores
 		//hasta 3 veces se pueden repetir
 		int ConteoNumeroCompuestoI = 0;
@@ -27,7 +30,36 @@ public class Romano {
 		int ConteoNumeroCompuestoL = 0;
 		int ConteoNumeroCompuestoD = 0;
 		
-		
+		//recorrer el texto
+		for(int recorrido = 0; recorrido<texto.length();recorrido++)
+		{
+			//condiciones de conteo con las sumas correpondientes
+			//de acuerdo a la equivalencia
+			if(Character.toString(cadenaAmanipular.charAt(recorrido)).equals("I"))
+				ConteoNumeroCompuestoI++;
+			if(Character.toString(cadenaAmanipular.charAt(recorrido)).equals("X"))
+				ConteoNumeroCompuestoX++;
+			if(Character.toString(cadenaAmanipular.charAt(recorrido)).equals("C"))
+				ConteoNumeroCompuestoC++;
+			if(Character.toString(cadenaAmanipular.charAt(recorrido)).equals("M"))
+				ConteoNumeroCompuestoM++;
+			if(Character.toString(cadenaAmanipular.charAt(recorrido)).equals("V"))
+				ConteoNumeroCompuestoV++;
+			if(Character.toString(cadenaAmanipular.charAt(recorrido)).equals("L"))
+				ConteoNumeroCompuestoL++;
+			if(Character.toString(cadenaAmanipular.charAt(recorrido)).equals("D"))
+				ConteoNumeroCompuestoD++;
+		};
+		//impresiones de prueba
+		/*
+		System.out.println(ConteoNumeroCompuestoI);
+		System.out.println(ConteoNumeroCompuestoX);
+		System.out.println(ConteoNumeroCompuestoC);
+		System.out.println(ConteoNumeroCompuestoM);
+		System.out.println(ConteoNumeroCompuestoV);
+		System.out.println(ConteoNumeroCompuestoL);
+		System.out.println(ConteoNumeroCompuestoD);
+		*/
 		return texto;
 	};
 	public static void main(String[] args) {

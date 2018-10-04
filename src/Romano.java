@@ -114,12 +114,39 @@ public class Romano {
 				
 			}
 			
+			//valor decimal que sera el final de la transformacion 
 			
-			for(int i = 0; i<convertirValores.length; i++) 
+			int valorFinal = 0;
+			//recorremos la matrix com de los numeros ya terminados como es
+			//terner en cuenta que el ultimo valor solo se suma
+			for(int recorridoValores = 0; recorridoValores<convertirValores.length-1; recorridoValores++) 
 			{
-				System.out.println(convertirValores[i]);
-			}
+				//si el valor actual es mayor o igual siguiente suma
+				if(convertirValores[recorridoValores]>=convertirValores[recorridoValores+1]) 
+				{
+					valorFinal = valorFinal + convertirValores[recorridoValores];
+					//pero si es el penuntimo valor entonces suma el ultimo valor
+					if(recorridoValores+1==convertirValores.length-1) 
+					{
+						//has la suma
+						valorFinal = valorFinal + convertirValores[recorridoValores+1];
+					}
+				}else 
+				{
+					//si es menor entonces haces una resta
+					valorFinal = valorFinal - convertirValores[recorridoValores];
+					//si es el ultimo pues suma el ultimo valor
+					if(recorridoValores+1==convertirValores.length-1) 
+					{
+						//pones al valor final
+						valorFinal = valorFinal + convertirValores[recorridoValores+1];
+					}
+				}
+				
+			};
 			
+			//lo tranformamos a cadena para mostrar en el retorno
+			cadenaAmanipular = Integer.toString(valorFinal);
 		}else
 		{
 			//si no cumple la funcion es que esta repetido
@@ -131,7 +158,7 @@ public class Romano {
 		// TODO Auto-generated method stub
 //empezando la aplicacion 
 		//cadena que se utilizara para todas la conversiones
-		String Cadena =  "ix";
+		String Cadena =  "lxxix";
 		//convocando al metodo
 		System.out.println(romano(Cadena));
 	}

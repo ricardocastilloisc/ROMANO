@@ -62,7 +62,7 @@ public class Romano {
 		*/
 		
 		//condicion de seguir el proceso 
-		//el cual se indica en al incio del metdo
+		//el cual se indica en al incio del metodo
 		
 		if
 		(
@@ -76,7 +76,50 @@ public class Romano {
 				
 		) 
 		{
-			System.out.println("continua");
+			//array donde tendremos ya los valores convertidos a decimal segun su 
+			//su valor equivalente
+			int convertirValores [] = new int[cadenaAmanipular.length()];
+			//recorrido
+			for(int recorrido = 0; recorrido<cadenaAmanipular.length();recorrido++)
+			{
+				//valor que se nos otrogara al buscarlo en la
+				//matriz donde esta los equivalentes
+				String ValorStringNumerico = "0";
+				//recorremos la matriz donde estan los equivalentes
+				for(int recorridointerno = 0; recorridointerno<NumerosRomanos.length; recorridointerno++) 
+				{
+					//condicion para encontrar los valores de la matriz de equivalencia
+					if(Character.toString(cadenaAmanipular.charAt(recorrido))
+							.equals(NumerosRomanos[recorridointerno][0])) 
+					{
+						//extraemos el valor
+						ValorStringNumerico = NumerosRomanos[recorridointerno][1];
+						//rompemos el ciclo
+						break;
+					};
+				}
+				//condicion de si hay una letra que no debe haber en 
+				//los numeros romanos
+				if(Integer.parseInt(ValorStringNumerico)==0) 
+				{
+					//mostrar mensaje de error
+					cadenaAmanipular = "Hay un error en tu numero romano";
+				}else 
+				{
+					//si no hay error
+					//poner a la mmatriz que quermos
+					convertirValores [recorrido] = Integer.parseInt(ValorStringNumerico);
+				}
+				;
+				
+			}
+			
+			
+			for(int i = 0; i<convertirValores.length; i++) 
+			{
+				System.out.println(convertirValores[i]);
+			}
+			
 		}else
 		{
 			//si no cumple la funcion es que esta repetido

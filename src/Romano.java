@@ -60,13 +60,35 @@ public class Romano {
 		System.out.println(ConteoNumeroCompuestoL);
 		System.out.println(ConteoNumeroCompuestoD);
 		*/
-		return texto;
+		
+		//condicion de seguir el proceso 
+		//el cual se indica en al incio del metdo
+		
+		if
+		(
+				ConteoNumeroCompuestoI<4 &&
+				ConteoNumeroCompuestoX<4 &&
+				ConteoNumeroCompuestoC<4 &&
+				ConteoNumeroCompuestoM<4 &&
+				ConteoNumeroCompuestoV<2 &&
+				ConteoNumeroCompuestoL<2 &&
+				ConteoNumeroCompuestoD<2
+				
+		) 
+		{
+			System.out.println("continua");
+		}else
+		{
+			//si no cumple la funcion es que esta repetido
+			cadenaAmanipular = "Hay repetidos que no deben de haber";
+		}
+		return cadenaAmanipular;
 	};
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 //empezando la aplicacion 
 		//cadena que se utilizara para todas la conversiones
-		String Cadena =  "xiv";
+		String Cadena =  "ix";
 		//convocando al metodo
 		System.out.println(romano(Cadena));
 	}

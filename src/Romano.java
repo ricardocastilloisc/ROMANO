@@ -99,27 +99,37 @@ public class Romano {
 
 			// valor decimal que sera el final de la transformacion
 			int valorFinal = 0;
-			// recorremos la matrix com de los numeros ya terminados como es
-			// terner en cuenta que el ultimo valor solo se suma
-			for (int recorridoValores = 0; recorridoValores < convertirValores.length - 1; recorridoValores++) {
-				// si el valor actual es mayor o igual siguiente suma
-				if (convertirValores[recorridoValores] >= convertirValores[recorridoValores + 1]) {
-					valorFinal = valorFinal + convertirValores[recorridoValores];
-					// pero si es el penuntimo valor entonces suma el ultimo valor
-					if (recorridoValores + 1 == convertirValores.length - 1) {
-						// has la suma
-						valorFinal = valorFinal + convertirValores[recorridoValores + 1];
-					}
-				} else {
-					// si es menor entonces haces una resta
-					valorFinal = valorFinal - convertirValores[recorridoValores];
-					// si es el ultimo pues suma el ultimo valor
-					if (recorridoValores + 1 == convertirValores.length - 1) {
-						// pones al valor final
-						valorFinal = valorFinal + convertirValores[recorridoValores + 1];
-					}
-				}
 
+			// si en la matriz solo hay uno pues poner el valor
+			if (convertirValores.length == 1)
+			{
+				//poner el unico valor valido
+				valorFinal = convertirValores[0];
+			} else {
+
+				// recorremos la matrix com de los numeros ya terminados como es
+				// terner en cuenta que el ultimo valor solo se suma
+				for (int recorridoValores = 0; recorridoValores < convertirValores.length - 1; recorridoValores++) {
+					// si el valor actual es mayor o igual siguiente suma
+					if (convertirValores[recorridoValores] >= convertirValores[recorridoValores + 1]) {
+						valorFinal = valorFinal + convertirValores[recorridoValores];
+						// pero si es el penuntimo valor entonces suma el ultimo valor
+						if (recorridoValores + 1 == convertirValores.length - 1) {
+							// has la suma
+							valorFinal = valorFinal + convertirValores[recorridoValores + 1];
+						}
+					} else {
+						// si es menor entonces haces una resta
+						valorFinal = valorFinal - convertirValores[recorridoValores];
+						// si es el ultimo pues suma el ultimo valor
+						if (recorridoValores + 1 == convertirValores.length - 1) {
+							// pones al valor final
+							valorFinal = valorFinal + convertirValores[recorridoValores + 1];
+						}
+					}
+
+				}
+				;
 			}
 			;
 			// confirmacion de valores

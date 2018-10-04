@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 public class Romano {
 	
@@ -157,8 +158,16 @@ public class Romano {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 //empezando la aplicacion 
+		
 		//cadena que se utilizara para todas la conversiones
-		String Cadena =  "lxxix";
+		
+		String Cadena;
+		// escanea lo que teclemos en consola
+		Scanner entrada = new Scanner(System.in);
+		// pedimos al usuario que nos diga el romano que quiera convertir
+		System.out.print("Ingrese el romano que quiera convertir: ");
+		// lo convierte a la variable principal
+		Cadena = entrada.nextLine();
 		//convocando al metodo
 		System.out.println(romano(Cadena));
 	}
